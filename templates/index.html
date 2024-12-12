@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Car Price Prediction Tool</h1>
+    </header>
+    <div class="container">
+        <h2>Enter Car Details</h2>
+        <form action="{{ url_for('predict') }}" method="POST">
+            <label for="Present_Price">Present Price (in lakhs):</label>
+            <input type="text" name="Present_Price" required>
+            
+            <label for="Kms_Driven">Kilometers Driven:</label>
+            <input type="text" name="Kms_Driven" required>
+            
+            <label for="Fuel_Type">Fuel Type:</label>
+            <select name="Fuel_Type" required>
+                <option value="0">Petrol</option>
+                <option value="1">Diesel</option>
+                <option value="2">CNG</option>
+            </select>
+            
+            <label for="Seller_Type">Seller Type:</label>
+            <select name="Seller_Type" required>
+                <option value="0">Dealer</option>
+                <option value="1">Individual</option>
+            </select>
+            
+            <label for="Transmission">Transmission:</label>
+            <select name="Transmission" required>
+                <option value="0">Manual</option>
+                <option value="1">Automatic</option>
+            </select>
+            
+            <label for="Owner">Owner (0: First, 1: Second, etc.):</label>
+            <input type="text" name="Owner" required>
+            
+            <label for="Age">Age of the Car (years):</label>
+            <input type="text" name="Age" required>
+            
+            <button type="submit">Predict Price</button>
+        </form>
+    </div>
+</body>
+</html>
